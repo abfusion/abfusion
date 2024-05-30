@@ -76,6 +76,7 @@
         xhr.onerror = function () {
           location.replace(homepage);
         };
+        console.log("r = " + ((isLabel ? GITHUB_ISSUES_LABEL_LINK : GITHUB_ISSUES_LINK) + issueNumber + query))
         xhr.open("GET", (isLabel ? GITHUB_ISSUES_LABEL_LINK : GITHUB_ISSUES_LINK) + issueNumber + query);
         xhr.send();
       }
