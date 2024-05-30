@@ -50,7 +50,7 @@
             }
             
             var message = payload.message;
-            var title = payload.title;
+            var title = payload.title + query;
 
             // Workaround IE 11 lack of support for new URL()
             var url = document.createElement("a");
@@ -76,8 +76,7 @@
         xhr.onerror = function () {
           location.replace(homepage);
         };
-        console.log("r = " + ((isLabel ? GITHUB_ISSUES_LABEL_LINK : GITHUB_ISSUES_LINK) + issueNumber + query))
-        xhr.open("GET", (isLabel ? GITHUB_ISSUES_LABEL_LINK : GITHUB_ISSUES_LINK) + issueNumber + query);
+        xhr.open("GET", (isLabel ? GITHUB_ISSUES_LABEL_LINK : GITHUB_ISSUES_LINK) + issueNumber);
         xhr.send();
       }
 
